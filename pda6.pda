@@ -1,0 +1,28 @@
+//PDA for problem 6
+alphabet: {a,b}
+start: q0
+accepting: {q2}
+
+q0 (_, _ -> S, q1)
+
+q1 (_, S -> AX, q1)
+q1 (_, S -> YB, q1)
+q1 (_, S -> ZbZaZ, q1)
+q1 (_, A -> aA, q1)
+q1 (_, A -> "", q1)
+q1 (_, B -> bB, q1)
+q1 (_, B -> "", q1)
+q1 (_, X -> aXb, q1)
+q1 (_, X -> a, q1)
+q1 (_, Y -> b, q1)
+q1 (_, Y -> aYb, q1)
+q1 (_, Z -> aZ, q1)
+q1 (_, Z -> bZ, q1)
+q1 (_, Z -> "", q1)
+
+q1 (a, a -> "", q1)
+q1 (b, b -> "", q1)
+
+q1 (_, _ -> "", q2)
+q2 (_, _ -> "", q2)
+
